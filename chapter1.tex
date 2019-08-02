@@ -1,10 +1,22 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-\section*{Test}
-\subsection*{Test}
-\begin{karte}{Testkarte}
-    Hello world.
+\section*{Gleichmäßige Konvergenz}
+
+\begin{karte}{Definition gleichmäßige Konvergenz}
+    Eine Folge \( \abb{f_n}{D}{\R} \) (oder \( \C \)) 
+    konvergiert gleichmäßig gegen \( f: D \rightarrow \R \), 
+    falls 
+    \[ \limes{n} ||f_n - f ||_\infty = 0. \]
+\end{karte}
+\begin{karte}{Gleichmäßige Konvergenz und Stetigkeit}
+    Seien \( f_n : D \rightarrow \C, n\in\N \) eine 
+    stetige Funktionenfolge auf \( D \subset \R \) 
+    (oder \( D = \C \)), die gleichmäßig gegen 
+    \( f: D \rightarrow \C \) konvergiert, d.\ h.\ 
+    \[ ||f_n - f||_\infty \rightarrow 0 
+    \text{ für } n\rightarrow\infty. \]
+    Dann ist \(f\) auch stetig auf \(D\).
 \end{karte}
 
 \end{document}

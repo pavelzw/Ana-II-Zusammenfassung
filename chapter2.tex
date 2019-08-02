@@ -1,0 +1,24 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Zweiter MWS}
+
+\begin{karte}{Zweiter Mittelwertsatz}
+    Seien \( \abb{f,g}{[a,b]}{\R} \) stetig und differenzierbar 
+    auf \( (a, b) \).
+    \[ \exists \zeta \in (a, b):
+    g'(\zeta)(f(b)  f(a)) = f'(\zeta)(g(b) - g(a)). \]
+    Wenn \( g'(x) \neq 0 \; \forall x \in (a, b) \), dann gilt 
+    \[ \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\zeta)}{g'(\zeta)}. \]
+\end{karte}
+\begin{karte}{Regel von l'Hospital}
+    Seien \( \abb{f,g}{[a,b]}{\R} \) differenzierbar 
+    und \( \limesx{x}{a} g(x) = 0 = \limesx{x}{a} f(x) \)
+    und \( g(x) \neq 0 \;\forall x \in (a, b) \).
+    Wenn 
+    \[ \limesx{x}{a} \frac{f'(x)}{g'(x)} \in \R \cup \set{-\infty, \infty} \]
+    existiert, dann existiert auch \( \limesx{x}{a} \frac{f(x)}{g(x)} \)
+    und es gilt 
+    \[ \limesx{x}{a} \frac{f(x)}{g(x)} = \limesx{x}{a} \frac{f'(x)}{g'(x)}. \]
+\end{karte}
+\end{document}
