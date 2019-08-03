@@ -1,0 +1,35 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Eigenschaften elementarer Funktionen}
+
+\begin{karte}{Einheitswurzeln}
+    Die Gleichung \( w^n = 1, n \in \N \) hat 
+    genau \(n\) Lösungen:
+    \[ \zeta_k = e^{\frac{ik2\pi}{n}} 
+    = \cos \frac{2\pi k}{n} + i \sin \frac{2\pi k}{n}. \]
+\end{karte}
+
+\begin{karte}{Polarkoordinaten}
+    Sei \( w \omega\in \C \setminus \set{0} \).
+    \[ \Rightarrow \exists \varphi \in \R: w = \abs{w}e^{i\varphi} \]
+\end{karte}
+
+\begin{karte}{\(\sin\) und \( \cos \) \textendash{} alte Bekannte}
+    \( \forall z \in \C \) ist 
+    \[ \cos z = \frac{1}{2}(e^{iz} + e^{-iz}) \quad \sin z = \frac{1}{2i}(e^{iz} - e^{-iz}) \]
+    und es gilt
+    \[ e^{iz} = \cos z + i \sin z. \]
+    Additionstheoreme:
+    \[ \cos(z+w) = \cos z \cos w - \sin z \sin w \]
+    \[ \sin(z+w) = \cos z \sin w + \sin z \cos w \]
+\end{karte}
+
+\begin{karte}{Ableitungen Arcusfunktionen}
+    \[ (\tan x)' = \frac{1}{\cos^2 x} \]
+    \[ (\arctan x)' = \cos^2(\arctan x) = \frac{1}{1+x^2} \]
+    \[ (\arccos x)' = -\frac{1}{\sqrt{1-x^2}} \]
+    \[ (\arcsin x)' = \frac{1}{\sqrt{1-x^2}} \]
+\end{karte}
+
+\end{document}

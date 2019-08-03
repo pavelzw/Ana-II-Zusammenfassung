@@ -19,4 +19,46 @@
     Dann ist \(f\) auch stetig auf \(D\).
 \end{karte}
 
+\section*{Taylor}
+
+\begin{karte}{Taylorpolynom}
+    Sei \( \abb{f}{(c,d)}{\R} \) \(n\)-mal differenzierbar, 
+    \( a \in (c,d) \). Dann heißt 
+    \[ T_n(f,a)(x) := \sum_{l=0}^n 
+    \frac{f^{(l)}(a)}{l!} {(x-a)}^l \]
+    das \(n\)-te Taylorpolynom von \(f\) an der Stelle \(a\) 
+    und \[ R_n(f,a) := f - T_n(f,a) \] heißt Restglied.
+\end{karte}
+
+\begin{karte}{Satz von Taylor}
+    Sei \( \abb{f}{I}{\R} \) \( n \)-mal differenzierbar. Dann gibt es zu
+    \( a \in I \) eine Funktion \( \abb{R_n(f,a)}{I}{\R} \) mit
+    \[ f = T_n(f, a) + R_n(f,a) \]
+    und \( R_n(f,a) \) ist gegeben durch
+    \[ R_n(f,a)(x) = \frac{1}{n!} 
+    \left( f^{(n)}(\xi) - f^{(n)}(a) \right) {(x-a)}^n \]
+    für ein \( \xi \) zwischen \( a \) und \( x \).
+    \[ \limesx{x}{a} \frac{ R_n(f,a)(x) }{ {(x-a)}^n } = 0. \]
+\end{karte}
+
+\begin{karte}{Restglieddarstellung von Schlömilch}
+    Sei \( a \in [c,d], p > 0, n \in \N, 
+    \abb{f}{[c,d]}{\R}, f\in \mathcal{C}^n([c, d], \R) \) 
+    und \( f^{(n+1)} \) existiere auf \( (c,d) \). Dann existiert 
+    für jedes \( x \in [c,d]\setminus \set{a} \) ein \( \xi
+    \in (\min(a,x), \max(a,x)) \), sodass 
+    \[ R_n(f,a)(x) = \frac{f^{(n+1)}(\xi)}{ pn! } 
+    (x - \xi)^{n+1-p} (x-a)^p. \]
+\end{karte}
+
+\begin{karte}{Restglieddarstellungen Lagrange, Cauchy}
+    Aus Schlömilch folgt mit \( p=1 \)
+    \[ R_n(f,a)(x) = \frac{f^{(n+1)}(\zeta)}{(n+1)!} (x-a)^{n+1} \text{ (Lagrange)}. \]
+    
+    Mit \( p = n+1 \) folgt
+    \[ R_n(f,a)(x) = \frac{f^{(n+1)}(\zeta)}{n!} 
+    \left( \frac{x- \zeta}{x-a} \right)^n (x-a)^{n+1} \text{ (Cauchy)}. \]
+\end{karte}
+
+
 \end{document}
