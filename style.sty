@@ -53,6 +53,16 @@
 \DeclareMathOperator{\spec}{spec}
 \DeclareMathOperator{\Spur}{Spur}
 
+
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\scalarprod}[2]{\langle #1, #2 \rangle}
+\newcommand{\ddx}[1]{\frac{d}{d#1}}
+\newcommand{\ddxpartial}[1]{\frac{\partial}{\partial#1}}
+\newcommand{\ddxpartialboth}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dx}{\ensuremath{\; dx}}
+\newcommand{\integralx}[4]{\ensuremath{\int_{#2}^{#3} #1 \;d{#4}}}
+\newcommand{\integral}[3]{\integralx{#1}{#2}{#3}{x}}
+
 \setlength\dashlinedash{0.4pt}
 \setlength\dashlinegap{1.4pt}
 \setlength\arrayrulewidth{0.4pt}

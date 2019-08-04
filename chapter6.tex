@@ -1,0 +1,37 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Integrationstechniken}
+
+\begin{karte}{Definition fast überall differenzierbar}
+    Eine Funktion \( \abb{F}{I}{\C} \) ist fast überall 
+    stetig differenzierbar, falls es Stammfunktion einer 
+    Regelfunktion \( \abb{f}{I}{\C} \) ist.
+\end{karte}
+
+\begin{karte}{Partielle Integration}
+    Sind \(\abb{u,v}{I}{\C}\) fast überall stetig 
+    differenzierbar, dann ist auch 
+    \( u \cdot v \) fast überall stetig differenzierbar und 
+    es gilt 
+    \[ \int u v' \dx = uv - \int u' v \dx. \]
+    Genauer: 
+    \[ \integral{uv'}{a}{b} 
+    = \left[ uv \right]_a^b - \integral{u'v}{a}{b} 
+    \;\forall a,b\in I. \]
+\end{karte}
+
+\begin{karte}{Substitutionsregel}
+    Sei \( \abb{f}{I}{\C} \) Regelfunktion    
+    und Stammfunktion \(F\) zu \(f\).
+    Weiter sei \( \abb{t}{[a,b]}{I} \) 
+    stetig differenzierbar und monoton.
+    Dann gilt:    
+    \( F \circ t \) ist Stammfunktion von 
+    \( (f\circ t) \cdot t' \)
+    und es gilt 
+    \[ \integral{f(t(x))}{a}{b} 
+    = \integralx{f(t)}{t(a)}{t(b)}{t}. \]
+\end{karte}
+
+\end{document}

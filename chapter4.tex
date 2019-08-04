@@ -1,0 +1,122 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Integrale}
+
+\begin{karte}{Definition Treppenfunktion}
+    Eine Funktion \( \abb{\varphi}{[a,b]}{\C} \) (oder \( \R, \R^d \))
+    heißt Treppenfunktion, falls es Punkte \( a = x_0 < \ldots < x_n = b \)
+    gibt, sodass \( \varphi \) auf jedem Intervall \( (x_{k-1}, x_k) \) 
+    konstant ist.\\
+    Die Menge aller Treppenfunktionen \( T[a,b] \) bildet einen 
+    Vektorraum.\\
+    Lässt sich auch wie folgt schreiben:
+    \[ \varphi = \sum_{k=1}^m c_k \mathds{1}_{A_k}. \]
+    \( A_k \) offenes Intervall oder Punkt.
+\end{karte}
+
+\begin{karte}{Integral einer Treppenfunktion}
+    Ist \( \abb{\varphi}{[a,b]}{\C} \) und \( Z = \set{x_0,\ldots, x_n} \)
+    eine Zerlegung \gqq{passend} zu \( \varphi \), dann definieren wir 
+    \[ \int_a^b \varphi(x) dx 
+    := \sum_{k=1}^n c_k (\underbrace{x_k - x_{k-1}}_{= \Delta x_k})
+    = \sum_{k=1}^n c_k \Delta x_k. \]
+    Integral ist unabhängig von der Zerlegung.
+\end{karte}
+\begin{karte}{Eigenschaften Treppenfunktionen}
+    Seien \( \varphi, \psi \) Treppenfunktionen und 
+    \( \alpha, \beta \in \C \).
+    \begin{enumerate}
+        \item \( \alpha \varphi + \beta \psi \) ist Treppenfunktion.
+        \item Linearität: \( \integral{(\alpha \varphi + \beta \psi)}{a}{b} 
+        = \alpha \integral{\varphi}{a}{b} 
+        + \beta \integral{\psi}{a}{b} \).
+        \item Beschränktheit: \( \abs{\integral{\varphi}{a}{b}}
+        \leq \integral{\abs{\varphi}}{a}{b} \leq (b-a) \cdot \norm{\varphi}_\infty \). \\
+        \( ||\varphi||_\infty 
+        := \underset{x \in [a,b]}{\sup} \abs{\varphi(x)} \).
+        \item Monotonie: Sind \( \varphi, \psi \) reell und 
+        \( \varphi \leq \psi \).
+        \[ \Rightarrow \integral{\varphi}{a}{b} 
+        \leq \integral{\psi}{a}{b}. \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Regelfunktion}
+    Sei \( I \) ein Intervall mit Anfangspunkt \(a\) 
+    und Endpunkt \(b\). Eine Funktion 
+    \[ \abb{f}{[a,b]}{\C} \] 
+    heißt Regelfunktion, falls sie 
+    \begin{enumerate}
+        \item in jedem Punkt \(x \in (a,b)\) 
+        einen linksseitigen und rechtsseiten 
+        Grenzwert hat.
+        
+        \item im Fall \( a \in I \) in \(a\) einen 
+        rechtsseiten Grenzwert hat und falls 
+        \( b \in I \) in \(b\) 
+        einen linksseitigen Grenzwert hat.
+    \end{enumerate}
+    Wir bezeichnen den \( \C \)-Vektorraum der 
+    Regelfunktionen mit \( R(I) \).
+    Eine Regelfunktion wird auch als \gqq{sprungstetige} Funktion bezeichnet.\\
+    Jede Regelfunktion ist beschränkt.
+\end{karte}
+
+\begin{karte}{Approximationssatz}
+    Eine Funktion \( \abb{f}{[a,b]}{\C} \) ist 
+    eine Regelfunktion genau dann, wenn 
+    \[ \forall \varepsilon > 0 \; \exists 
+    \text{Treppenfunktion } \varphi \in T[a,b] \]
+    mit 
+    \[ \norm{f - \varphi}_\infty 
+    = \underset{x \in [a,b]}{\sup} \abs{f(x) - \varphi(x)}
+    \leq \varepsilon \]
+    (dieses \(\varphi\) nennt man \( \varepsilon \)-Approximationsfunktion
+    für \(f\))
+    Daraus folgt für alle Regelfunktionen gilt 
+    \( \exists \) Folge \( (\varphi_n)_n \) von Treppenfunktionen 
+    mit \( \norm{f - \varphi_n}_\infty \rightarrow 0 \). 
+    Wir können auch eine Reihe finden mit \( f = \sum_{k=1}^\infty \psi_k \). 
+    (\( \psi_1 := \varphi_1, \psi_n := \varphi_n - \varphi_{n-1} \))
+\end{karte}
+
+\begin{karte}{Integral einer Regelfunktion}
+    Sei \( \abb{f}{[a,b]}{\C} \) eine Regelfunktion.
+    \( \forall \) Folgen \( (\varphi_n)_n, \varphi_n \in T[a,b] \)
+    mit \( ||f - \varphi_n||_\infty \rightarrow 0 \) existiert.
+    \[ \integral{f(x)}{a}{b} 
+    := \limes{n} \integral{\varphi_n(x)}{a}{b}. \]
+    Der Grenzwert hängt nicht von der Wahl der Folge
+    \( (\varphi_n)_n \) ab.\\
+    Wir nennen den Grenzwert das Integral von 
+    \( f \) über \( [a,b] \).
+\end{karte}
+
+\begin{karte}{Integral Rechenregeln}
+    Seien \( f,g \in R([a,b]),\; \alpha, \beta \in \C \).
+    \begin{description}
+        \item[Linearität] \[ \integral{(\alpha f + \beta g)}{a}{b}
+        = \alpha \integral{f}{a}{b} + \beta \integral{g}{a}{b} \]
+        \item[Beschränktheit] \[ \abs{\integral{f}{a}{b}} \leq 
+        \integral{\abs{f}}{a}{b} 
+        \leq (b-a)||f||_\infty. \]
+        \item[Monotonie] \[ \integral{f}{a}{b} 
+        \leq \integral{g}{a}{b}, \text{ falls } f \leq g. \]
+    \end{description}
+    Seien \( a < b < c \), \(f\) eine Regelfunktion auf 
+    \( [a,c] \). Dann gilt 
+    \[ \integral{f}{a}{c} 
+    = \integral{f}{a}{b} + \integral{f}{b}{c}. \]
+\end{karte}
+
+\begin{karte}{Allgemeiner Mittelwertsatz für Integrale}
+    Es sei \( \abb{f}{[a,b]}{\R} \) stetig, 
+    \( p \in R[a,b] \) mit 
+    \[ p \geq 0 \text{ (Gewichtsfunktion)}. \]
+    Dann gilt: \( \exists \rho \in (a,b) \) mit 
+    \[ \integral{f(x) p(x)}{a}{b} 
+    = f(\rho) \integral{p(x)}{a}{b}. \]
+\end{karte}
+
+\end{document}
