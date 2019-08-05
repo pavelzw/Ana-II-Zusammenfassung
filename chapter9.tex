@@ -1,0 +1,254 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Topologie des \( \R^d \)}
+
+\begin{karte}{Norm auf einen Vektorraum}
+    Eine Norm auf einen reellen oder komplexen Vektorraum
+    ist eine Funktion: \( \abb{\norm{\cdot}}{X}{\R} \) mit
+    \begin{description}
+        \item[Positivität] \( \norm{x} \geq 0 \; \forall x\in X \) 
+        und \( \norm{x} = 0 \Leftrightarrow x = 0 \).
+        \item[Homogenität] \( \norm{\lambda x} = \abs{\lambda} \norm{x}
+        \; \forall \lambda \in \R (\C), x\in X \).
+        \item[\( \Delta \)-Ungleichung] \( \norm{x+y}
+        \leq \norm{x} + \norm{y} \; \forall x,y \in X \)
+    \end{description}
+\end{karte}
+
+\begin{karte}{Metrik und metrischer Raum}
+    Menge \(X\) mit einer Funktion \( \abb{d}{X\times X}{\R} \)
+    mit den Eigenschaften
+    \begin{description}
+        \item[Positivität] \( d(x,y) \geq 0, d(x,y) = 0 \Leftrightarrow x=y
+        \; \forall x,y \in X \)       
+        \item[Symmetrie] \( d(x,y) = d(y,x) \; \forall x,y \in X \)
+        \item[\( \Delta \)-Ungleichung] 
+        \( d(x,y) \leq d(x,z) + d(z, y) 
+        \; \forall x,y,z \in X \).
+    \end{description}
+    \(d\) heißt Metrik und \( (X, d) \) heißt metrischer 
+    Raum.
+\end{karte}
+
+\begin{karte}{Offene Kugel}
+    Sei \(X\) ein metrischer Raum mit Metrik \(d\).
+    \[ x_0 \in X, r > 0 \quad B_r(x_0) 
+    := \set{ x\in X: d(x, x_0) < r } \] 
+    ist die offene Kugel mit Radius \(r\) um \(x_0\).
+    \[ \R^d: B_r(x_0) = \set{x \in \R^d: 
+    \norm{x - x_0}_2 < r}. \]
+\end{karte}
+
+\begin{karte}{Offene Mengen}
+    Sei \( (X,d) \) ein metrischer Raum. Eine Menge 
+    \( U \subset X \) heißt offen, falls 
+    \[ \forall x\in U \; \exists r = r_x > 0 \]
+    mit 
+    \[ B_r(x) \subset U. \]
+\end{karte}
+
+\begin{karte}{Topologie}
+    Man nehme metrischen Raum \( (X, d) \).
+    Die Menge aller offenen Teilmengen von \(X\) 
+    ist eine Topologie, das heißt
+    \begin{enumerate}
+        \item \( \emptyset, X \) sind offen.
+        \item Der Durchschnitt endlich vieler
+        offener Mengen ist offen.
+        \item Die Vereinigung beliebig vielen offenen
+        Mengen ist offen. 
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Inneres, Abschluss, Rand von Mengen}
+    Sei \( (X, d) \) ein metrischer Raum, \( M \subset X \).
+    Dann ist 
+    \[ M^o 
+    := \set{x \in M: \exists r_x > 0: B_r(x)\subset M}\]
+    \[= \set{x \in M: \exists \varepsilon > 0: 
+    B_\varepsilon(x) \subset M }\]
+    \( M^o \) ist offen und \( U \) offen 
+    und \( U \subset M \Rightarrow U \subset M^o \).
+    (d. h. \( M^o \) ist die größte offene Teilmenge 
+    von \(M\))
+    Abschluss:
+    \[ \overline{M} := 
+    \set{x \in X: \; \forall \varepsilon > 0: 
+    B_\varepsilon(x) \cap M \neq \emptyset} \]
+    \( \overline{M} \) ist abgeschlossen und ist 
+    \(A \supset M \), \( A \) abgeschlossen 
+    \[ \Rightarrow A \supset \overline{M}. \]
+    Rand: 
+    \[ \delta M := \set{ x \in X: \; \forall \varepsilon > 0: 
+    B_\varepsilon(x) \cap M \neq \emptyset, 
+    B_\varepsilon(x) \cap M^C \neq \emptyset } = \overline{M} \setminus M^o\]
+    \[ M^C = X \setminus M. \]
+    \[ M^o \subset M \subset \overline{M}. \]
+\end{karte}
+
+\begin{karte}{Hausdorffsche Trennungseigenschaft}
+    Sei \( X \) ein metrischer Raum, 
+    \( x,y \in X, x\neq y \). 
+    \[ \Rightarrow \exists \varepsilon > 0: 
+    B_\varepsilon(x) \cap B_\varepsilon(y) = \emptyset. \]
+\end{karte}
+
+\begin{karte}{Konvergenz}
+    Sei \( X \) ein metrischer Raum. Die Folge 
+    \( (x_n)_n \) von Punkten \( x_n \in X \; \forall n\in\N \)
+    (schreiben \( (x_n)_n \subset X \)) konvergiert 
+    gegen \( x \in X \), falls 
+    \begin{align*}
+        &\forall \varepsilon > 0 \; \exists K \in \N: 
+        d(x_n, x) < \varepsilon \;\forall n \geq K. \\
+        &\Leftrightarrow \; \forall \varepsilon > 0 
+        \; \exists K \in \N: x_n \in B_\varepsilon(x) 
+        \; \forall n \geq K 
+    \end{align*}
+    \( \Leftrightarrow \forall \varepsilon > 0  \) 
+    ist \( x_n \in B_\varepsilon(x) \) für fast alle 
+    \( n\in\N \)
+    \[ \Leftrightarrow \limes{n} d(x_n, x) = 0 \]
+    Schreiben \( x_n \rightarrow x \), oder 
+    \( \limes{n} x_n = x \).
+\end{karte}
+
+\begin{karte}{Abgeschlossene Menge}
+    Sei \( X \) ein metrischer Raum und \( A \subset X \) 
+    heißt abgeschlossen, falls 
+    \[ (x_n)_n \subset A, x_n \rightarrow x 
+    \Rightarrow x \in A. \]
+    In einem metrischen Raum 
+    \( X \) gilt für alle \( A \subset X \):
+    \[ A \text{ ist offen } 
+    \Leftrightarrow A^C = X \setminus A \text{ ist 
+    abgeschlossen}. \]
+\end{karte}
+
+\begin{karte}{Eigenschaften abgeschlossene Mengen}
+    Für Teilmengen eines metrischen Raums \(X\) gilt: 
+    \begin{enumerate}
+        \item \( \emptyset, X \) abgeschlossen.
+        \item Die Vereinigung endlich vieler abgeschlossen 
+        Mengen ist abgeschlossen.
+        \item Der Durchschnitt beliebig vieler abgeschlossener 
+        Mengen ist abgeschlossen.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Häufungspunkte, isolierte Punkte}
+    Sei \(X\) metrischer Raum, \( M \subset X \) \\
+    Ein Punkt \( x \in X \) heißt Häufungspunkt von \(M\),
+    falls 
+    \[ \forall \varepsilon > 0: 
+    B_\varepsilon(x) \cap M \setminus \set{x} 
+    \neq \emptyset. \]
+    Ein Punkt \( x \in X \) heißt isolierter Punkt 
+    von \( M \), falls 
+    \[ \exists \varepsilon > 0: B_\varepsilon(x) \cap M 
+    = \set{x}. \]
+\end{karte}
+
+\begin{karte}{Dichte Menge}
+    Eine Teilmenge \(M\) eines metrischen Raumes heißt
+    dicht, falls \(\overline{M} = X\).
+\end{karte}
+
+\begin{karte}{Cauchyfolge}
+    Sei \( X \) ein metrischer Raum. 
+    Eine Folge \( (x_n)_n \subset X \) heißt 
+    Cauchyfolge, falls
+    \[ \forall \varepsilon > 0 \; \exists K \in \N: 
+    d(x_n, x_m) < \varepsilon \; \forall n,m \geq K \]
+    \[ \Leftrightarrow \limessup{n} \limessup{m} 
+    d(x_n, x_m) = 0. \]
+    Ein metrischer Raum heißt vollständig, falls jede 
+    Cauchyfolge konvergiert.
+\end{karte}
+
+\begin{karte}{Äquivalenz von Normen}
+    \( \norm{\cdot}_a, \norm{\cdot}_b \) sind äquivalent, wenn
+    \[ \exists c_1, c_2: c_1\norm{x}_a \leq \norm{x}_b 
+    \leq c_2\norm{x}_a \; \forall x \]
+\end{karte}
+
+\begin{karte}{Stetigkeit}
+    Seien \(X, Y \) metrische Räume, \(\abb{f}{X}{Y}\)
+    heißt stetig in \(x_0 \in X\), falls 
+    \[ \forall \varepsilon > 0 \; \exists \delta > 0
+    d_y(f(x), f(x_0)) < \varepsilon \forall x \in X: 
+    d_x(x, x_0) < \delta \]
+    oder äquivalent 
+    \[ f(B_\delta(x_0)) \subset B_\varepsilon(f(x_0)) \]
+    \(f\) stetig auf \(X\) falls \(f\) in jedem Punkt 
+    \(x_0 \in X\) stetig ist.
+\end{karte}
+
+\begin{karte}{Lipschitzstetigkeit}
+    \( \abb{f}{X}{Y} \) heißt Lipschitzstetig 
+    mit Konstante \( L \geq 0 \), falls 
+    \[ d(f(x_1), f(x_2)) 
+    \leq L d(x_1, x_2) \forall x_1, x_2 \in X. \]
+\end{karte}
+
+\begin{karte}{Folgenkriterium für Stetigkeit}
+    Sei \( \abb{f}{X}{Y} \) stetig in \(x_0\)\\
+    \( \Leftrightarrow \) für jede Folge 
+    \( (x_n)_n \subset X, x_n \rightarrow x_0 \) 
+    folgt \( f(x_n) \rightarrow f(x_0) \).
+\end{karte}
+
+\begin{karte}{Charakterisierung von Stetigkeit}
+    Seien \( X, Y \) metrische Räume. Dann gilt \( \abb{f}{X}{Y} \)
+    ist stetig \( \Leftrightarrow \) Urbilder offener Mengen sind offen:
+    \( \forall V \subset Y \) offen ist \( f^{-1}(V) \) offen in \( X \).
+\end{karte}
+
+\begin{karte}{Folgenkompaktheit}
+    Ein metrischer Raum \( X \) ist folgenkompakt oder kurz kompakt, 
+    falls jede Folge \((x_n)_n \subset X \) hat eine Teilfolge
+    \( (x_{n_k})_k \subset X \), die gegen ein \( x \in X \) konvergiert. \\
+    Eine Menge \( K \subset \R^d \) (mit Euklidischen Abstand sogar jede
+    Norm) ist kompakt \( \Leftrightarrow K \) ist abgeschlossen und
+    beschränkt.
+\end{karte}
+
+\begin{karte}{Totale Beschränktheit}
+    \(M\) ist total beschränkt: 
+    \[ \forall \varepsilon > 0 \; 
+    \exists \text{ endlich viele } x_1,\dots,x_n \in X:
+    M \subset \bigcup_{j=1}^n B_\varepsilon(x_j) \]
+\end{karte}
+
+\begin{karte}{Bilder kompakter Mengen}
+    Sei \( \abb{f}{X}{Y} \) stetig, \( X, Y \) metrische Räume
+    und \(X\) sei kompakt
+    \( \Rightarrow \)
+    \begin{enumerate}
+        \item \( f(X) \subset Y \) ist kompakt in \( Y \).
+        \item Ist \(f\) injektiv, so ist \( \abb{f^{-1}}{f(X)}{X} \)
+        stetig.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Extrema in kompakten Räumen}
+    Sei \( \abb{f}{X}{\R} \) stetig, \( X \) kompakter 
+    metrischer Raum.\\
+    \( \Rightarrow f \) nimmt sein Minimum und 
+    Maximum an.
+\end{karte}
+
+\begin{karte}{Gleichmäßige Stetigkeit in kompekten Räumen}
+    Sei \( \abb{f}{X}{Y} \) stetig, 
+    \( X, Y \) metrische Räume, \(X\)
+    kompakt. \\
+    \( \Rightarrow f \) ist sogar gleichmäßig 
+    stetig:
+    \[ \forall \varepsilon > 0\; \exists 
+    \delta(\varepsilon) = \delta > 0:
+    x_1, x_2 \in X: d(x_1, x_2) < \delta
+    \Rightarrow d(f(x_1), f(x_2)) < \varepsilon. \]
+\end{karte}
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Uneigentliche Integrale und Reihen}
+
+\begin{karte}{Uneigentliches Integral Definition}
+    Sei \(f\) eine Regelfunktion auf dem Intervall \(I\) 
+    mit Randpunkten \\
+    \( a, b, -\infty \leq a < b \leq \infty \).
+    \begin{enumerate}
+        \item Ist \( I=[a,b) \), so definiert man im 
+        Fall der Konvergenz:
+        \[ \integral{f(x)}{a}{b} 
+        := \limesx{\beta}{b-} \integral{f(x)}{a}{\beta} \]
+        In diesem Fall heißt das uneigentliche Integral 
+        \( \integral{f(x)}{a}{b} \) \\
+        (genauer \( \underset{[a,b)}{\int} f(x) \dx \)) konvergent 
+        und der Grenzwert dessen Wert.
+        \item Ist \( I =(a,b) \) so definiert man
+        \[ \integral{f(x)}{a}{b} 
+        := \integral{f(x)}{a}{c} 
+        + \integral{f(x)}{c}{b}, \]
+        falls die uneigentlichen Integrale auf der rechten
+        Seite für ein \(a < c < b\) existieren (und damit
+        für alle \( a < c < b \)) und denselben Wert haben.
+        \item Ein uneigentliches Integral über \(f\) 
+        heißt absolut konvergent, falls das Integral 
+        über \(f\) konvergiert.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Majorantenkriterium Integrale}
+    Seien \( f,g \) Regelfunktionen auf 
+    \( [a,b), \abs{f} \leq g \). 
+    Existiert \( \integral{g(x)}{a}{b} \), so existiert 
+    auch \( \integral{f(x)}{a}{b} \), welches
+    absolut konvergent ist.\\
+    Analog für \( (a,b], (a,b) \).
+\end{karte}
+
+\begin{karte}{Integralkriterium für Konvergenz von Reihen}
+    Sei \( \abb{f}{[1,\infty)}{[0,\infty)} \) monoton 
+    fallend, dann konvergiert 
+    \[ a_n := \sum_{k=1}^n f(k) 
+    - \integral{f(x)}{1}{n+1} \]    
+    und 
+    \[ 0 \leq \limes{n} a_n \leq f(1) \]
+    und insbesondere gilt:
+    \[ \sum_{k=1}^\infty f(k) \text{ konvergiert }
+    \Leftrightarrow \integral{f(x)}{1}{\infty} 
+    \text{ konvergiert}. \]
+    Und im Fall der Konvergenz:
+    \[ 0 \leq \sum_{k=1}^\infty f(k) - \integral{f(x)}{1}{\infty} 
+    \leq f(1). \]
+\end{karte}
+
+\end{document}

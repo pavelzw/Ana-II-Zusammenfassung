@@ -1,0 +1,17 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Integration von Funktionenreihen}
+
+\begin{karte}{Integration von Funktionenreihen}
+    Seien \( \abb{f_n}{[a,b]}{\C} \) Regelfunktionen 
+    und \( f = \sum_{n=0}^\infty f_n \) konvergent 
+    absolut in der Supremumsnorm 
+    (d. h. \( \sum_{n=0}^\infty \norm{f_n}_\infty < \infty \)). 
+    Dann darf \(f\) gleichmäßig integriert werden:
+    \[ \integral{f(x)}{a}{b} 
+    = \integral{\sum_{n=1}^\infty f_n}{a}{b}
+    = \sum_{n=1}^\infty \integral{f_n}{a}{b}. \]
+\end{karte}
+
+\end{document}
