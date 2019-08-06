@@ -1,0 +1,22 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Der mehrdimensionale MWS}
+
+\begin{karte}{Der mehrdimensionale Mittelwertsatz}
+    Sei \( f \) eine reelle differenzierbare Funktion 
+    in einer offenen Menge \( U \subset \R^n \). Seien 
+    \( a, b \) Punkte, deren Verbindungsstrecke in \( U \)
+    liegt. Dann gibt es ein \( \xi \in [a,b] \) mit 
+    \[ f(b) - f(a) = Df(\xi) (b-a) = f'(\xi)(b-a). \] 
+\end{karte}
+
+\begin{karte}{Schrankensatz}
+    Eine \( \mathcal{C}^1 \)-Funktion \( \abb{f}{U}{\C} \) 
+    auf einer offenen Menge \( U \) ist auf jeder kompakten
+    konvexen Teilmenge \( K \subset U \) Lipschitz-stetig.
+    Dann gilt für beliebige \( x,y \in K \)
+    \[ \abs{ f(y) - f(x) } \leq \norm{f'}_K \cdot \norm{y - x}_\infty. \]
+\end{karte}
+
+\end{document}

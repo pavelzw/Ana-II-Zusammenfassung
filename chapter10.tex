@@ -1,0 +1,160 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Die mehrdimensionale Ableitung}
+
+\begin{karte}{Differenzierbarkeit Komponentenfunktionen}
+    Sei \( \abb{f}{(a,b)}{\R^m}, \) 
+    \[f(t) = \begin{pmatrix}
+        f_1(t)\\
+        \vdots \\
+        f_m(t)
+    \end{pmatrix}. \]
+    \( \abb{f_j}{(a,b)}{\R}, t_0 \in (a,b) \).
+    \[ \text{Es existiert } f'(t_0) = \limesx{t}{t_0} \frac{f(t) - f(t_0)}{t - t_0} \]
+    \[ \Leftrightarrow \abb{f_j}{(a,b)}{\R} 
+    \text{ ist in \(t_0\) differenzierbar } \forall j=1,\ldots,m. \]
+\end{karte}
+
+\begin{karte}{Richtungsableitung}
+    Sei \( \abb{f}{U}{\R^m}, U \subset \R^n \) offen, 
+    \( x \in U, v \in \R^n \).
+    \[ Df (x_0)[v] = 
+    D_v f(x) := \limesx{t}{0} \frac{f(x + tv) - f(x)}{t} 
+    =: \ddx{t} f(x + tv) \]
+    heißt die Richtungsableitung von \( f \) in \( x\in U \), 
+    in Richtung \( v \in \R^n \).\\
+    Ist \( \abb{f}{U}{\R^m} \) in \( x_0 \in U \)
+    differenzierbar, so gilt 
+\end{karte}
+
+\begin{karte}{Partielle Ableitung}
+    \( \abb{f}{U}{\R^m}, U \subset \R^n \) offen, \( x\in U \).
+    Die \(j\)-te partielle Ableitung von \(f\) in \(x \in U\) 
+    ist gegeben durch
+    \[ \partial_j f(x) := \ddxpartial{x_j} f(x) 
+    = D_{e_j} f(x) = \ddx{t} f(x + t e_j) \vert_{t=0}. \]
+
+    Wenn alle partiellen Ableitungen existieren, muss die Funktion 
+    nicht unbedingt stetig sein.
+\end{karte}
+\begin{karte}{Rechenregeln partielle Ableitung}
+    Sei \( U \subset \R^n \) offen, \( x\in U \), 
+    \( \abb{f,g}{U}{\R^m} \) und 
+    \( \partial_j f(x), \partial_j g(x) \) existiere.
+    \begin{enumerate}
+        \item Linearität \( \forall \alpha, \beta \in \R 
+        \partial_j (\alpha f + \beta g)(x) 
+        = \alpha \partial_j f(x) + \beta \partial_j g(x). \)
+        \item \[ \partial_j f(x) = \begin{pmatrix}
+            \partial_j f_1(x) \\
+            \vdots \\
+            \partial_j f_m(x) \\
+        \end{pmatrix} \]
+        \item Quotientenregel (für \( g(x) \neq 0 \))
+        \[ \partial_j \left(\frac{f}{g}\right)(x) 
+        = \frac{g(x) \partial_j f(x) - f(x) \partial_j g(x)}{g(x)^2} \]
+        \item Kettenregel (für \( \abb{f}{U}{I \subset \R}, 
+        I \) offenes Intervall, 
+        \( \abb{\varphi}{I}{\R} \) differenzierbar)
+        \( \partial_j (\varphi \circ f)(x) 
+        = \varphi'(f(x)) \partial_j f(x) \)
+        \item Produktregel: \( \abb{f}{U}{\R^m}, 
+        \abb{g}{U}{\R} \), partielle Ableitung 
+        existiert in \( x_0 \in U \).
+        \[ \Rightarrow \partial_j(f\cdot g)(x_0) 
+        = (\partial_j f)(x_0)\cdot g(x_0) + f(x_0)\cdot (\partial_j g)(x_0). \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Definition Ableitung}
+    \( U \subset \R^n \) offen. Eine Funktion \(\abb{f}{U}{R^m}\)
+    heißt differenzierbar in \(x_0 \in U\), falls ein
+    \( A \in \mathscr{L}(\R^n, \R^m) \) existiert mit
+    \[ \limesx{x}{x_0} \frac{f(x) -f(x_0) - A(x-x_0)}{\abs{x-x_0}} 
+    = 0 \in \R^m. \]
+    Mit der Substitution \( x = x_0 + h \), 
+    erhält man die äquivalente Form 
+    \[ \limesx{h}{0} \frac{ f(x_0 + h) - f(x_0) - A(h) }{\abs{h}} = 0. \]
+    Wir nennen \( Df(x_0) = A \) die Ableitung von \(f\) ein \(x_0\). 
+    \( \abb{Df(x_0)}{\R^n}{\R^m} \) ist linear.\\
+    Wenn \( f \) differenzierbar ist in \( x_0 \in U \), dann ist 
+    \( f \) auch stetig in \( x_0 \).
+\end{karte}
+
+\subsection*{Berechnen Ableitungen}
+
+\begin{karte}{Jakobimatrix}
+    \[ (\partial_1f(x), \dots, \partial_n f(x)) \]
+    \[ = \begin{pmatrix}
+        \partial_1 f_1(x) & \cdots & \partial_n f_1(x) \\
+        \vdots & & \vdots \\
+        \partial_1 f_m(x) & \cdots & \partial_n f_m(x)
+    \end{pmatrix} \]
+\end{karte}
+
+\begin{karte}{Gradient}
+    Sei \( \abb{f}{\R^n}{\R} \).
+    Wir nennen \( \grad f(x) := \nabla f(x) = \begin{pmatrix}
+        \partial_1 f(x) \\
+        \vdots \\
+        \partial_n f(x)
+    \end{pmatrix} \in \R^n \) den Gradienten von \(f\) in 
+    \( x \in U \).
+
+    Ist \( \nabla f(x) = 0 \in \R^n \), so heißt \(x\) 
+    kritischer Punkt.\\
+    Ist \( \nabla f(x) \neq 0 \), so heißt \(x\) 
+    nicht kritisch.
+\end{karte}
+
+\begin{karte}{Lin. Annäherung von Funktion durch Ableitung}
+    Sei \( U \subset \R^n\) offen, \(\abb{f}{U}{\R^m}\).
+    Dann gilt:
+    \(f\) ist differenzierbar in \(x_0 \in U \) mit Ableitung
+    \( A = Df(x_0) \)
+    \( \Leftrightarrow \exists \) Funktion, \( \varepsilon = 
+    \abb{\varepsilon_{x_0}}{U}{\R^m} \), stetig in \(x_0\) und
+    \(\varepsilon(x_0) = 0\) mit 
+    \[ f(x) = \underbrace{f(x_0) + A(x-x_0)}_{\text{affin linear}} 
+    + \underbrace{\abs{x-x_0}\varepsilon(x)}_{\text{Fehler}}
+    \; \forall x \in U \]
+\end{karte}
+
+\begin{karte}{Rechenregeln Ableitung}
+    Linearität: \( \abb{f,g}{U}{\R^m} \) differenzierbar in 
+    \(x_0 \in U \Rightarrow \alpha f + \beta g \) ist differenzierbar 
+    in \(x_0 \; \forall \alpha, \beta \in \R\) \\
+    \( D(\alpha f + \beta f)(x_0) = \alpha Df(x_0) + \beta Dg(x_0) \).
+
+    Produktregel: Sei \( \abb{f}{U}{\R^m}, \abb{g}{U}{\R} \)
+    differenzierbar in \(x_0\) \\
+    \( \Rightarrow  fg \) differenzierbar in \(x_0\): 
+    \( D(fg)(x_0) = Df(x_0)g(x_0) + f(x_0)Dg(x_0) \).
+
+    Quotientenregel \( \abb{f}{U}{\R^m}, \abb{g}{U}{\R} \)
+    \[ g(x_0) \neq 0 \]
+    \[ D\left(\frac{f}{g}\right)(x_0) 
+    = \frac{D(f)(x_0) g(x_0) - D(g)(x_0) f(x_0)}{g(x_0)^2}. \]
+\end{karte}
+
+\begin{karte}{Rechenregeln Ableitung: Kettenregel}
+    Seien \( \abb{f}{U}{\R^m} \), 
+    \( \abb{g}{V}{\R^p} \)
+    mit \( U \subset \R^n, V \subset \R^m \)
+    offen und \( f(U) \subset V \).
+    Sind \(f\) in \(x_0\) und \(g\) in \(y_0 = f(x_0)\)
+    differenzierbar, so ist auch \(\abb{g \circ f}{U}{\R^p}\)
+    differenzierbar in \(x_0\) und es gilt die 
+    Kettenregel 
+    \[ D(g\circ f)(x_0) = D g(f(x_0))Df(x_0). \]
+    Sind \( \abb{A = Dg(y_0)}{\R^m}{\R^p} \) und 
+    \( B = \abb{Df(x_0)}{\R^n}{\R^m} \)
+    die zugehörige Jacobimatrizen, so folgt 
+    \( C := AB \)
+    wobei
+    \( \abb{C}{\R^n}{\R^p} \) 
+    die Jacobimatrix zu \( D(f \circ g)(x_0) \) ist.
+\end{karte}
+
+\end{document}
