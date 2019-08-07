@@ -1,0 +1,46 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Existenz der Ableitung}
+
+\begin{karte}{Operatornorm}
+    Seien \(X, Y\) normierte Räume. 
+    \( \mathscr{L}(X,Y) \) ist ein Vektorraum mit
+    der Operatornorm \( (A \in \mathscr{L}(X,Y)) \)
+    \[ \norm{A} = \underset{\substack{x\in X\\x\neq 0}}{\sup}
+    \frac{\norm{Ax}_Y}{\norm{x}_X} 
+    = \underset{\substack{u\in X\\ \norm{u}_X = 1}}{\sup}
+    \norm{Au}_Y
+    \quad A \in \mathscr{L}(X,Y). \]
+\end{karte}
+
+\begin{karte}{Hilbert-Schmidt Norm}
+    \[ \norm{A}_{HS} = \norm{A}_2 := \left( 
+        \sum_{j=1}^m \sum_{k=1}^n \abs{a_{jk}}^2 \right)^{1/2} \]
+\end{karte}
+
+\begin{karte}{Verallgemeinerte partielle Ableitungen}
+    Sei \( \R^n = \R^{d_1} \times \dots \times \R^{d_l}, U \subset \R^n \),
+    \( x = (x_1, \ldots, x_l)^t \in U \).
+    Eine Funktion \( \abb{f}{U}{\R^m} \) heißt verallgemeinert
+    partiell differenzierbar in \(x\) in der \(j\)-ten 
+    Variable (\(j = 1, \ldots, l\)), falls die Funktion 
+    \[ h_j \mapsto f(x_1,\ldots, x_{j-1}, x_j + h_j, 
+    x_{j+1}, \ldots, x_l) \in \R^m \] 
+    in \( h_j = 0 \) differenzierbar ist.\\
+    Wir schreiben \(D_jf(x)\) für diese Ableitung.\\
+    Man beachte: \( \abb{D_jf(x)}{\R^{d_j}}{\R^m} \) ist linear.\\
+    Wenn \( f \) differenzierbar ist, so existieren alle 
+    verallgemeinerten partiellen Ableitungen in \(x\) 
+    und es gilt für \( h\in \R^n \)
+    \[ Df(x)[h] = \sum_{j=1}^l D_j f(x)[h]. \]
+\end{karte}
+
+\begin{karte}{Differenzierbarkeitskriterium}
+    Existieren in einer Umgebung \(U\) von \( a\in \R^n \) alle 
+    partiellen Ableitungen \( \partial_1 f, \ldots, \partial_n f \) 
+    und sind diese im Punkt \( a \) stetig, so ist \( f \) in \( a \) 
+    stetig differenzierbar.
+\end{karte}
+
+\end{document}

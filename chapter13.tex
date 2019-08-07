@@ -1,0 +1,31 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Anwendungen}
+
+\begin{karte}{Wegzusammenhängend}
+    Ein metrischer Raum \(X\) heißt wegzusammenhängend, falls 
+    es zu je zwei Punkten \( x_0, x_1 \in X \) eine stetige 
+    Funktion \( \abb{\varphi}{[0,1]}{X} \) gibt mit 
+    \( \varphi(0) = x_0, \varphi(1) = x_1 \).\\
+    Sei \(U \subset \R^n \) offen und wegzusammenhängend. 
+    Dann gibt es zu \(x_0, x_1 \in U\) einen Polygonzug, d. h. 
+    ein stückweise linearen Weg \(\abb{\gamma}{[0,1]}{U}\) mit
+    \(\gamma(0) = x_0, \gamma(1) = x_1\).
+\end{karte}
+
+\begin{karte}{Wegzusammenhängend mit Ableitung}
+    Sei \(U \subset \R^n\) offen und wegzusammenhängend,
+    \( \abb{f}{U}{\R^m} \) differenzierbar. Dann gilt
+    \[ Df(x) = 0 \; \forall x \in U \Rightarrow f \text{ ist konstant.} \]
+\end{karte}
+
+\begin{karte}{Satz von Schwarz}
+    Die Funktion \(f\) besitze in einer Umgebung von \(a \in \R^n\) 
+    die partiellen Ableitungen \( \partial_i f, \partial_j f \) und 
+    \( \partial_{ji} f \). Ferner sei \( \partial_{ji}f \) in \(a\) 
+    stetig. Dann existiert auch \( \partial_{ij} f(a) \) und es gilt
+    \[ \partial_{ij}f(a) = \partial_{ji} f(a). \]
+\end{karte}
+
+\end{document}
