@@ -1,0 +1,66 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Extrema}
+
+\begin{karte}{Lokales Maximum/Minimum Definition}
+    Sei \(D \subset \R^d, \abb{f}{D}{\R}\) hat in \(x \in D\)
+    ein lokales Minimum, falls \(\delta > 0\) existiert, sodass
+    \[ \forall y \in B_\delta(x) \cap D: f(y) \geq f(x) \]
+    (in einer Umgebung von \(x\) minimal). \\
+    Das Minimum heißt strikt (oder isoliert), falls 
+    \[ \forall y \in (B_\delta(x) \cap D) \setminus \set{x}: f(y) > f(x) \]
+    \( \abb{f}{D}{\R} \) hat in \(x\) ein lokales (isoliertes) Maximum,
+    falls \(-f\) in \(x\) ein lokales (striktes, isoliertes) Minimum hat.
+\end{karte}
+
+\begin{karte}{Ableitung beim Extremum}
+    Sei \(U\subset \R^n\) offen, \(\abb{f}{U}{\R}\) habe ein lokales Extremum
+    in \(x \in U\) und sei in \(x\) differenzierbar.
+    \[ \Rightarrow Df(x) = 0. \]
+\end{karte}
+
+\begin{karte}{Hessematrix}
+    Sei \( U \subset \R^n \) offen, 
+    \( \abb{f}{U}{\R^n} \) existieren alle 
+    partiellen Ableitungen erster und zweiter 
+    Ordnung von \(f\), so heißt 
+    \[ H := ( \partial_k \partial_j f(x) )_{j,k=1,\ldots n} \]
+    die Hessematrix von \(f\).\\
+    Wenn \(f \in \mathcal{C}^2\), so ist die Hessematrix 
+    symmetrisch.
+\end{karte}
+
+\begin{karte}{Limes Hessematrix}
+    Sei \(U \subset \R^n\) offen, \(f \in \mathcal{C}^2(U)\), 
+    dann gilt
+    \[ \limesx{u}{0} \frac{f(x+u) - f(x) - Df(x)[h] - \frac{1}{2} 
+    \scalarprod{u}{H(x)}}{\abs{u}^2} = 0. \]
+\end{karte}
+
+\begin{karte}{Definitheit Bilinearformen}
+    Sei \( \abb{b}{\R^n\times \R^n}{\R} \) eine 
+    symmetrische Bilinearform. Sie heißt 
+    \begin{description}
+        \item[positiv semidefinit] falls 
+        \( b(u,u) \geq 0 \;\forall u\in \R^n \).
+        \item[positiv definit] falls 
+        \( b(u,u) > 0 \;\forall u\in \R^n \).
+        \item[negativ semidefinit] falls 
+        \( b(u,u) \leq 0 \;\forall u\in \R^n \).
+        \item[negativ definit] falls 
+        \( b(u,u) < 0 \;\forall u\in \R^n \).
+        \item[indefinit] falls \( \exists u_1, u_2\in \R^n \) 
+        mit \( b(u_1, u_1) > 0 \) und \( b(u_2, u_2) < 0 \).
+    \end{description}
+\end{karte}
+
+\begin{karte}{Bedingungen für Maxima}
+    Sei \(U \subset \R^n\) offen, \(f \in \mathcal{C}^2(U,\R)\), 
+    \( H = H(x) \) Hessematrix von \(f\) in \(x\).\\
+    \(f\) hat genau dann in \(x\in U\) ein lokales Minimum, wenn
+    \( \nabla f(x) = 0 \) und \( b(v,v) := \scalarprod{v}{H(x)v} \)
+    positiv semidefinit.
+\end{karte}
+
+\end{document}
