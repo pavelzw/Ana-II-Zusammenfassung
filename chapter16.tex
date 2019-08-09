@@ -1,0 +1,30 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Banachscher Fixpunktsatz}
+
+\begin{karte}{\(\alpha\)-Kontraktion}
+    Sei \( M \) ein metrischer Raum mit Metrik \(d\). \( \abb{T}{M}{N} \) ist 
+    eine \( \alpha \)-Kontraktion, falls \( d(T(x), T(y)) \leq \alpha d(x,y) 
+    \;\forall x,y\in M \).
+\end{karte}
+
+\begin{karte}{Banachscher Fixpunktsatz}
+    Sei \( M \) ein vollständiger metrischer Raum, \( \abb{T}{M}{M} \) 
+    eine \( \alpha \)-Kontraktion (\( 0 \leq \alpha < 1 \)). Dann gibt 
+    es genau einen Fixpunkt \( x^* \) und man nehme irgendein \( x \in M \) 
+    \[ \Rightarrow x^* = \limes{n} T^n(x). \]
+    mit \( T^1(x) = T(x), T^{n+1}(x) = T(T^n(x)) \)
+    und a priori Fehlerabschätzung: 
+    \[ d(x^*, T^n(x)) \leq \frac{1}{1-\alpha} \alpha^n d(x, T(x)). \]
+\end{karte}
+
+\begin{karte}{Vereinfachtes Newton-Verfahren}
+    Genügt die Funktion \(T\) einer Lipschitzbedingung
+    in einer offenen Kugel \( B_r(a) \) mit 
+    Lipschitzkonstante \( \alpha = \frac{1}{2} \) 
+    und ist \(\abs{A^{-1} f(a)} < \frac{r}{2}\), so hat \(f\)
+    in \(B_r(a)\) genau eine Nullstelle \(\xi\).
+\end{karte}
+
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Satz über implizite und inverse Funktionen}
+
+\begin{karte}{Satz über implizite Funktionen}
+    Gegeben \( \R^n, \R^m, U \subset \R^n \times \R^m \) 
+    offen, \( (x_0,y_0)\in U \) und \( \abb{F}{U}{\R^m} \in \mathcal{C}^1 \). 
+    Ist \( F(x_0, y_0) = c\in \R^m \) und sind die verallgemeinerten partiellen 
+    Ableitungen von \( F \) nach \( y \), also 
+    \[ \abb{D_2 F(x_0, y_0)}{\R^n}{\R^m} \] 
+    invertierbar, so existieren offene Umgebungen \( U_1 \subset \R^n \) 
+    von \(x_0\) und \( U_2 \subset \R^m \) von \(y_0\) und eine 
+    differenzierbare Funktion \( \abb{g}{U_1}{U_2} \) mit 
+    \[ F(x, g(x)) = c \;\forall x\in U_1. \]
+    Es gilt 
+    \[ Dg(x) = -(D_2 F(x,g(x)))^{-1} D_1 F(x,g(x)) \;\forall x\in U_1. \]
+    Außerdem ist \( g(x) = y \) die einzige Lösung der Gleichung 
+    \( F(x,y) = c \), d. h. \( F(x,y) = c \Leftrightarrow g(x) = y \).
+\end{karte}
+
+\begin{karte}{Fixpunkte eines Parameterraums}
+    Sei \( M \) ein vollständiger metrischer Raum und \( P \) 
+    (Parameterraum) ein weiterer metrischer Raum und für \( x\in P \)     
+    sei \(\abb{T_x}{M}{M}\) eine \(\alpha\)-Kontraktion mit \(\alpha < 1\)
+    wobei \(\alpha\) unabhängig von \(x\) ist. Dann exisitert für jedes \(x \in P\)
+    ein Fixpunkt \(y_x \in M\) von \(T_x\), d. h. 
+    \[ y_x = T_x(y_x) \]
+    Ferner: Ist für alle \(y \in M\) die Abbildung 
+    \(P \ni x \mapsto T_x(y)\) stetig, so ist
+    \( x \mapsto y_x \) stetig.
+\end{karte}
+
+\begin{karte}{Invertierbarkeitskriterium}
+    Sei \( \abb{A}{\R^m}{\R^m} \) linear und 
+    invertierbar und \( \abb{B}{\R^m}{\R^m} \) 
+    linear mit \(\norm{B-A} \leq 1\) (Operatornorm). \\
+    Dann ist \( B \) invertierbar.
+\end{karte}
+
+\begin{karte}{Invertierbarkeit in offenen Umgebungen von Matrizen}
+    Sei \( U \subset \R^n \) offen. 
+    \[ \abb{A}{U}{\mathcal{L}(\R^m, \R^m)} \]
+    stetig und \( \abb{A(x_0)}{\R^m}{\R^m} \) invertierbar 
+    für ein \( x_0 \in U \). \( \Rightarrow \exists \) offene Umgebung 
+    \( \tilde{U} \subset U \) von \( x_0 \), sodass \( \forall x \in \tilde{U} \): 
+    \( A(x) \) ist invertierbar.
+\end{karte}
+
+\begin{karte}{Satz über inverse Funktionen}
+    Sei \( U \subset \R^n \) offen und 
+    \[ \abb{f}{U}{\R^n} \]
+    eine stetig differenzierbare Abbildung. Sei 
+    \( a\in U, b:=f(a) \). Die Jacobi-Matrix 
+    \( Df(a) \) sei invertierbar. Dann gibt es eine 
+    offene Umgebung \( U_a \subset U \) von \(a\) und 
+    eine offene Umgebung \( V_b \) von \(b\), sodass 
+    \(f\) die Menge \( U_a \) bijektiv auf \(V_b\) 
+    abbildet und die Umkehrfunktion
+    \[ \abb{g=f^{-1}}{V_b}{U_a} \]
+    stetig differenzierbar ist (\(f\) ist ein 
+    Diffeomorphismus). Es gilt 
+    \[ D(f^{-1})(b) = Dg(b) = (Df(a))^{-1} = (Df(g(b)))^{-1}. \]
+\end{karte}
+
+\end{document}
