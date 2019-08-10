@@ -1,0 +1,35 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Differentialgleichungen}
+
+\begin{karte}{Gewöhnliche Differentialgleichungen}
+    \(n, d \in \N, D \subset \R \times \R^d \times \cdots \times \R^d = \R \times \R^{dn}\).\\
+    \(\abb{f}{D}{\R^d}\)\\
+    Eine Gleichung der Form 
+    \[ y^{(n)}(t) = f(t, y(t), y'(t), \ldots, y^{(n-1)}(t)) \]
+    ist die explizite Form der gewöhnlichen Differentialgleichung \(n\)-ter Ordnung.\\
+    Anfangsbedingung: \( y(t_0) = y_0, y'(t_0) = y'_0 
+    \ldots y^{(n-1)}(t_0) = y^{(n-1)}(t_0) \in \R^d \).\\
+    Ang. \( v(t) := (y(t), y'(t), \ldots, y^{(n-1)}(t)) = (v_1(t), \ldots, v_n(t)) \)\\
+    \[ v'(t) = (v'_1(t), \ldots, v'_n(t)) 
+    = (v_2(t), \ldots, v_n(t), f(t,v(t))) \]
+    Vektorwertige gewöhnliche Differentialgleichung erster Ordnung.
+\end{karte}
+
+\begin{karte}{Lösungsraum von Differentialgleichungen}
+    \( y \) ist stetig differenzierbare Lösung 
+    von \[ \begin{cases}
+        y' = f(t,y) \\
+        t(t_0)
+    \end{cases} \]
+    \( \Leftrightarrow y \) ist stetig und 
+    Lösung von 
+    \[ y(t) = y(t_0) + \integralx{y'(s)}{t_0}{t}{s} 
+    = y_0 + \integralx{f(s, y(s))}{t_0}{t}{s}. \]
+    \(\Rightarrow \) Raum in dem wir Lösungen suchen ist 
+    \(\mathcal{C}([t_0-\delta, t_0+\delta], U)\)
+    oder \(\mathcal{C}([t_0, t_0+\delta], U)\).
+\end{karte}
+
+\end{document}

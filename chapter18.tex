@@ -1,0 +1,71 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Extrema m. Nebenbedingungen}
+
+\begin{karte}{Untermannigfaltigkeit}
+    Sei \( 1 \leq m \leq n \), eine Menge \( M \subset \R^n \) 
+    heißt \(m\)-dimensionale Untermannigfaltigkeit 
+    (U-Mfk) des \( \R^n \) der Klasse \( \mathcal{C}^r \) 
+    (\(r \in \N_0 \cup \set{\infty} \)), falls zu jedem 
+    \( p \in M \) eine offene Menge \( U \subset \R^n \) 
+    und ein \( \mathcal{C}^r \)-Diffeomorphismus
+    \(\abb{\Phi}{U}{\Phi(U)}\) existiert mit 
+    \[ \Phi(M \cap U) = (\R^m \times \set{0}^{n-m}) \cap \Phi(U)\]
+    lokale Plättung.
+\end{karte}
+
+\begin{karte}{Untermannigfaltigkeitskriterium}
+    Sei \( M \subset \R^n, m + k = n \). Dann sind äquivalent
+    \begin{enumerate}
+        \item \(M\) ist \(\mathcal{C}^r \) Untermannigfaltigkeit.        
+        \item Niveaumengenkriterium: Zu \( p \in M \exists \) offene 
+        Umgebung \( U \subset \R^n \) mit 
+        \( f \in \mathcal{C}^r(U, \R^k) \), sodass
+        \[ M \cap U = f^{-1}(\set{0}) \]
+        und
+        \[ \rk Df = k \text{ auf } U. \]
+        \item Graphenkriterium zu \(p \in M \; \exists \) offene
+        Umgebung \(U \times V \in \R^m \times \R^k = \R^n\) und
+        \(g \in \mathcal{C}^r (U, V)\) so, dass
+        nach einer Permutuation der Koordinaten gilt \(M \cap (U \times V) 
+        = \set{x,g(x) : x \in U}\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Tangentialvektor}
+    Ein Vektor \(v \in \R^n\) heißt Tangentialvektor von \(M \subset \R^n\)
+    im Punkt \(p \in M\), falls
+    es eine Abbildung \( \abb{\gamma}{(-\varepsilon, \varepsilon)}{M} \) mit 
+    \[ \gamma(0) = p, \quad \gamma'(0) = v \]
+    Schreiben 
+    \( T_p M = \) Menge aller Tangentialvektoren von \(M\) im Punkt \(p\).
+\end{karte}
+
+\begin{karte}{Kern von \( Df(p) \) bei Untermannigfaltigkeiten}
+    Sei \( M \in \R^n \) eine \(m\)-dimensionale 
+    \( \mathcal{C}^1 \) Untermannigfaltigkeit  und \(n = m + k\).
+    Ist \( p \in M \cap U = f^{-1}(\set{0}) \) für eine
+    Funktion \( f \in \mathcal{C}^1(U, \R^k) \) mit 
+    \( \rk Df = k \) auf \(U\),
+    so gilt 
+    \[ T_p M = \ker(Df(p)). \]
+    Insbesondere ist \( T_p M \) ein \(m\)-dimensionaler 
+    Vektorraum.
+\end{karte}
+
+\begin{karte}{Extrema mit Nebenbedingungen}
+    Sei \( U \subset \R^n \) offen, \( f \in \mathcal{C}^1(U, \R^k) \) 
+    (\(k\) Nebenbedingungen) und \(\phi \in \mathcal{C}^1(U, \R)\).
+    Gilt dann für ein \(p \in f^{-1}(\set{0})\)
+    \begin{enumerate}
+        \item \( \varphi(q) \geq \varphi(p) \;\forall q \in U \) mit
+        \( f(q) = 0 \) (lokales Minimum unter Nebenbedingungen)
+        \item \( \rk Df (p) = k \) (maximaler Rang)
+    \end{enumerate}
+    Dann gibt es \( \lambda_1, \ldots, \lambda_k \in \R \) (Lagrange Multiplikatoren)
+    mit 
+    \[ \nabla \varphi(p) = \sum_{j=1}^k \lambda_j \nabla f_j(p). \]
+\end{karte}
+
+\end{document}

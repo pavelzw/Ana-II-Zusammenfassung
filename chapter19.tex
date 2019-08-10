@@ -1,0 +1,222 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Kurvenintegrale}
+
+\begin{karte}{\( \mathcal{C}^1 \)-Kurve}
+    Ist \( I \subset \R \) Intervall und
+    \( \gamma \in \mathcal{C}^1(I, \R^d) \),
+    so heißt \(\gamma \in \mathcal{C}^1\)-Kurve.
+\end{karte}
+
+\begin{karte}{Bogenlänge}
+    Sei \(\abb{\gamma}{[a,b]}{\R^d}\) eine \(\mathcal{C}^1\)-Kurve
+    \[ L(\gamma) := \integralx{\abs{\gamma'(t)}}{a}{b}{t} \]
+    Bogenlänge (Länge der Kurve).\\
+    Zerlegung \(a = t_0 < t_1 < \ldots < t_N = b\)
+    \[ \sum_{j=1}^N \abs{\gamma(t_j) - \gamma(t_{j-1})} 
+    = \sum_{j=1}^N \abs{\gamma'(t_j)} (t_j - t_{j-1}) 
+    \approx \integralx{\abs{\gamma'(t)}}{a}{b}{t}. \]
+\end{karte}
+
+\begin{karte}{Umparametrisierung}
+    Seien \(\abb{\gamma_j}{I_j}{\R^d}, j=1,2 \) zwei \(\mathcal{C}^1\)-Kurven
+    Dann heißt \(\gamma_2\) Umparametrisierung von \( \gamma_1 \),
+    falls es eine Bijektion \(\varphi \in \mathcal{C}^1(I_2, I_1)\)
+    mit \(\varphi' \neq 0 \) existiert mit 
+    \[ \gamma_2 = \gamma_1 \circ \varphi. \]
+    Die Bijektion \( \varphi \) heißt Parametertransformation.
+\end{karte}
+
+\begin{karte}{Bogenlänge von Umparametrisierungen}
+    Sind \(\gamma_j \in \mathcal{C}^1(I_j, \R^d), 
+    j \in \set{1,2}\ \gamma_2\) Umparametrisierung  
+    von \( \gamma_1 \), so ist 
+    \[ L(\gamma_1) = L(\gamma_2). \]
+\end{karte}
+
+\begin{karte}{Bogenlängenparametrisierung}
+    Eine Kurve \(c \in \mathcal{C}^1(I, \R^d)\) heißt nach Bogenlänge
+    parametrisiert, falls
+    \[ \abs{c'(s)} = 1 \; \forall s \in I. \]
+    Sei \( [a,b] \subset I \).
+    \[ L(c \vert_{[a,b]}) = \integralx{\abs{c'(s)}}{a}{b}{s}
+    = b - a. \]
+    D. h. \(c\) bildet \([a,b]\) längentreu nach \(\R^d\) ab.\\
+    Sei \( \gamma \in \mathcal{C}^1([a,b],\R^d) \) eine Kurve 
+    mit Länge \(L = L(\gamma)\) und \(\gamma'(t) \neq 0 
+    \; \forall t \in [a,b] \) (\( \gamma \) ist regulär).
+    Dann gibt es eine \(\mathcal{C}^1\)-Bijektion \(\varphi\) 
+    mit \( \varphi' > 0 \) so, dass \(c = \gamma \circ \varphi\) nach 
+    Bogenlängeparametrisierung ist.
+\end{karte}
+
+\begin{karte}{Stückweise \( \mathcal{C}^1 \)-Kurve}
+    \(\gamma \in \mathcal{C}([a,b], \R^d)\) heißt stückweise
+    \(\mathcal{C}^1\)-Kurve, falls eine Zerlegung
+    \(a = t_1 < t_1 < \ldots < t_N = b\) existiert so, dass
+    für \( I_k = [t_{k-1}, t_k]\)
+    \[ \gamma \vert_{I_k} \in \mathcal{C}^1(I_k, \R^d) 
+    \; \forall k = 1,\ldots,N. \]
+    \( \gamma \in P \mathcal{C}^1([a,b], \R^d)\).
+\end{karte}
+
+\begin{karte}{Linienintegral}
+    Ist \( F \in \mathcal{C}(U, \R^d) \), \(U \subset \R^d\) offen. 
+    \( \gamma \in P\mathcal{C}^1([a,b], U) \), so heißt 
+    \[ \int_\gamma F\cdot d \vec{x} 
+    := \integralx{\scalarprod{ F(\gamma(t)) }{ \gamma'(t) } }{a}{b}{t} \]
+    Linienintegral.
+\end{karte}
+
+\begin{karte}{Eigenschaften des Kurvenintegrals}
+    a): linear: \\
+    \( F_j \in \mathcal{C}(U, \R^d), \lambda_j \in \R, j = 1,2 \)
+    \[ \gamma \in P\mathcal{C}^1([a,b], U) \Rightarrow 
+    \int_\gamma (\lambda_1 F_1 + \lambda_2 F_2)\; d\vec{x} 
+    = \lambda_1 \int_\gamma F_1\; d\vec{x} + \lambda_2 \int_\gamma F_2
+    \; d\vec{x}. \]
+    b): Additivität bei Zerlegung:\\
+    Ist \(\gamma \leftarrow P\mathcal{C}^1([a,b], U), 
+    F \leftarrow \mathcal{C}^1(U, \R^d) \)
+    und \(a = t_0 < \ldots < t_N = b\) Zerlegung von \([a,b]\)
+    \[\gamma_k := \gamma\vert_{[t_k1, t_k]}
+    \Rightarrow \integralx{F}{\gamma}{}{\vec{x}}
+    = \sum_{k=1}^N\integralx{F}{\gamma}{}{\vec{x}}.\]    
+    c) Invarianz unter Umparametrisierung:\\
+    Sind \(\gamma \in P\mathcal{C}^1(I,\R^d), \varphi \in 
+    \mathcal{C}^1(I_2, I_1)\)
+    eine Parametertransformation, so gilt, je nach Vorzeichen 
+    von \(\varphi'\)
+    \[ \int_{\gamma \circ \varphi} F \; d\vec{x} 
+    = \pm \int_\gamma F \; d\vec{x} \]
+    \(+: \varphi' > 0, -: \varphi' < 0\).
+\end{karte}
+
+\begin{karte}{Abschätzung Kurvenintegral}
+    Sei \(U \subset \R^d\) offen, \(F \in \mathcal{C}^1(U, \R^d), \gamma \in P\mathcal{C}^1([a,b], U)\)
+    \[ \abs{\int_\gamma F d\vec{x}} \leq \norm{F \circ \gamma}_{\infty,[a,b]} L(\gamma) 
+    = \underset{t \in [a,b]}{\sup} \abs{F(\gamma(t))} L(\gamma).\]
+\end{karte}
+
+\begin{karte}{Gradientenfeld}
+    Sei \(U \subset \R^d\) offen. Das Vektorfeld \(F \in \mathcal{C}(U,\R^d)\)
+    heißt Gradientenfeld (bzw. Konservativ),
+    falls ein \(\varphi \in \mathcal{C}^1(U, \R)\) mit 
+    \[ \nabla \varphi = F. \] 
+    \(\varphi\) heißt Stammfunktion oder Potential von \(F\). 
+    \( F(x) = \nabla \varphi (x) \).
+\end{karte}
+
+\begin{karte}{Stammfunktion Eindeutigkeit}
+    Ist \( U \subset \R^d \) wegezusammenhängend, so 
+    ist eine Stammfunktion \( \varphi \) von \( F \in \mathcal{C}(U, \R) \) 
+    bis auf eine additive Konstante eindeutig bestimmt.
+\end{karte}
+
+\begin{karte}{Geschlossene Kurve}
+    Eine Kurve \(\abb{\gamma}{[a,b]}{\R^d}\)
+    heißt geschlossen, falls \(\gamma(a) = \gamma(b)\).
+\end{karte}
+
+\begin{karte}{Wegunabhängigkeit der Kurvenintegrale}
+    Sei \( U \subset \R^d\) offen und wegweise zusammenhängend.
+    Für \( F \in \mathcal{C}(U, \R^d) \) sind äquivalent
+    \begin{enumerate}
+        \item \( F \) ist Gradientenfeld.
+        \item Sei \(\gamma \in P\mathcal{C}^1([a,b], U)\) und 
+        \(\gamma\) geschlossen. Dann gilt 
+        \[ \int_\gamma F d\vec{x} = 0. \]
+        \item  Für je zwei Kurven \(\gamma_1, \gamma_2 \in P\mathcal{C}^1([a,b],U)\)
+        mit \(\gamma_1(a) = \gamma_2(a), \gamma_1(b) = \gamma_2(b)\) ist    
+        \[ \int_{\gamma_1} F d\vec{x} = \int_{\gamma_2} F d\vec{x}. \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Rotationsfreiheit}
+    Für \( U \subset \R^d \) ist \( F \in \mathcal{C}(U, \R^d) \)
+    ein Gradientenfeld.
+    \[ \Rightarrow \partial_l F_j 
+    = \partial_j F_l \text{ in } U 
+    \;\forall 1 \leq l,j \leq d. \]
+\end{karte}
+
+\begin{karte}{Homotopie}
+    Sei \(U \subset \R^d\) offen. Eine Homotopie in \(U\)
+    zwischen Kurven \(\gamma_1, \gamma_2 \in \mathcal{C}([a,b], U) \)
+    ist eine Abbildung \(\gamma \in \mathcal{C}([a,b]\times [0,1], U)\) mit
+    \[ \gamma(\cdot, 0) = \gamma_1, \gamma(\cdot, 1) = \gamma_2. \]
+    Gilt \( \gamma_1(a) = \gamma_2(a) = p, 
+    \gamma_1(b) = \gamma_2(b) = q \) und gibt es eine Homotopie mit    
+    \(\gamma(a,t) = p \; \forall t \in [0,1]\) mit 
+    \(\gamma(b,t) = q \; \forall t \in [0,1]\), so heißen \(\gamma_1, \gamma_2\)
+    homotop mit festen Endpunkten. Sind \( \gamma_1, \gamma_2 \)
+    geschlossen und gibt es eine Homotopie mit 
+    \(\gamma(a, t) = \gamma(b,t) \; \forall t \in [0,1]\),
+    so heißen \(\gamma_1, \gamma_2\) geschlossen homotop in \(U\).
+\end{karte}
+
+\begin{karte}{Homotopie Identität}
+    Sei \( U \subset \R^d, F \in \mathcal{C}^2(U, \R^d), 
+    \gamma \in \mathcal{C}^1([a,b] \times [0,1], U) \) und 
+    \( \partial_s \partial_t \gamma \in \mathcal{C}([a,b] \times [0,1], U) \).
+    \begin{align*}
+        &\int_{\gamma(\cdot, 1)} F \; d \vec{x}
+        - \int_{\gamma(\cdot, 0)} F \; d\vec{x} \\
+        = &\int_{\gamma(b, \cdot)} F \; d \vec{x} 
+        - \int_{\gamma(a, \cdot)} F \; d\vec{x} \\
+        + &\int_0^1 \int_a^b (\scalarprod{Df \circ \gamma
+        \left[\ddxpartialboth{\gamma}{t}\right] }{ \ddxpartialboth{\gamma}{s} } 
+        - \scalarprod{ DF \circ \gamma 
+        \left[\ddxpartialboth{\gamma}{s}\right] }{ \ddxpartialboth{\gamma}{t} } ) 
+        \; ds\; dt.
+    \end{align*}
+\end{karte}
+
+\begin{karte}{Fundamentalsatz der Algebra}
+    Jedes komplexe Polynom vom Grad \( n \geq 1 \) hat 
+    mindestens eine komplexe Nullstelle.
+\end{karte}
+
+\begin{karte}{Affine Homotopie}
+    Sei \(U \subset \R^d \) offen, \( F \in \mathcal{C}^1(U, \R^d), 
+    \partial_j F_l = \partial_l F_j \)\\
+    Kennen \( \gamma_0, \gamma_1 \in P\mathcal{C}^1([a,b], U) \) 
+    affine Homotopie 
+    \[ \abb{\gamma}{[a,b] \times [0,1]}{\R^n}, \gamma(s,t) 
+    := (1-t)\gamma_0(s) + t \gamma_1(s) \]
+    Haben \(\gamma_0,\gamma_1\) dieselben 
+    Endpunkte oder sind geschlossen und 
+    \(\gamma([a,b]\times[0,1]) \subset U \)
+    \[ \Rightarrow \int_{\gamma_0} F d\vec{x} 
+    = \int_{\gamma_1} F d\vec{x}. \]
+\end{karte}
+
+\begin{karte}{Homotopieinvarianz}
+    Sei \( U \subset \R^n \) offen, 
+    \( F \in \mathcal{C}^1(U, \R^d), 
+    \partial_j F_l = \partial_l F_j, 
+    \gamma_0, \gamma_1 \in P\mathcal{C}^1([a,b], U) \)
+    Homotopie in \( U \) mit festen 
+    Endpunkten (oder geschlossene Homotopie)
+    \[ \Rightarrow \int_{\gamma_0} F \; d\vec{x} 
+    = \int_{\gamma_1} F \; d\vec{x}. \]
+\end{karte}
+
+\begin{karte}{Einfach zusammenhängend}
+    Eine Menge \(U \subset \R^d\) heißt einfach zusammenhängend, wenn jede
+    geschlossene Kurve \(\gamma \in \mathcal{C}([a,b], U)\) in \(U\)
+    geschlossen homotop zu einer konstanten Kurve ist.
+\end{karte}
+
+\begin{karte}{Stammfunktionen von Vektorfeldern}
+    Sei \( U \subset \R^d \) offen und einfach zusammenhängend. 
+    Dann sind für ein Vektorfeld 
+    \( F \in \mathcal{C}^1(U, \R^d) \) äquivalent:
+    \begin{enumerate}
+        \item \( \partial_j F_l = \partial_l F_j,\; l,j = 1,\ldots, d \).
+        \item \( F \) hat eine Stammfunktion.
+    \end{enumerate}
+\end{karte}
+
+\end{document}
