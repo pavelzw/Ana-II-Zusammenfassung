@@ -36,7 +36,7 @@
     \[ x_0 \in X, r > 0 \quad B_r(x_0) 
     := \set{ x\in X: d(x, x_0) < r } \] 
     ist die offene Kugel mit Radius \(r\) um \(x_0\).
-    \[ \R^d: B_r(x_0) = \set{x \in \R^d: 
+    \[ B_r(x_0) = \set{x \in \R^d: 
     \norm{x - x_0}_2 < r}. \]
 \end{karte}
 
@@ -56,7 +56,7 @@
         \item \( \emptyset, X \) sind offen.
         \item Der Durchschnitt endlich vieler
         offener Mengen ist offen.
-        \item Die Vereinigung beliebig vielen offenen
+        \item Die Vereinigung beliebig vieler offener
         Mengen ist offen. 
     \end{enumerate}
 \end{karte}
@@ -67,18 +67,18 @@
     \[ M^o 
     := \set{x \in M: \exists r_x > 0: B_r(x)\subset M}\]
     \[= \set{x \in M: \exists \varepsilon > 0: 
-    B_\varepsilon(x) \subset M }\]
+    B_\varepsilon(x) \subset M }.\]
     \( M^o \) ist offen und \( U \) offen 
     und \( U \subset M \Rightarrow U \subset M^o \).
     (d. h. \( M^o \) ist die größte offene Teilmenge 
-    von \(M\))
+    von \(M\))\\
     Abschluss:
     \[ \overline{M} := 
     \set{x \in X: \; \forall \varepsilon > 0: 
     B_\varepsilon(x) \cap M \neq \emptyset} \]
     \( \overline{M} \) ist abgeschlossen und ist 
     \(A \supset M \), \( A \) abgeschlossen 
-    \[ \Rightarrow A \supset \overline{M}. \]
+    \( \Rightarrow A \supset \overline{M}. \)
     Rand: 
     \[ \delta M := \set{ x \in X: \; \forall \varepsilon > 0: 
     B_\varepsilon(x) \cap M \neq \emptyset, 
@@ -126,11 +126,11 @@
     abgeschlossen}. \]
 \end{karte}
 
-\begin{karte}{Eigenschaften abgeschlossene Mengen}
+\begin{karte}{Eigenschaften abgeschlossener Mengen}
     Für Teilmengen eines metrischen Raums \(X\) gilt: 
     \begin{enumerate}
         \item \( \emptyset, X \) abgeschlossen.
-        \item Die Vereinigung endlich vieler abgeschlossen 
+        \item Die Vereinigung endlich vieler abgeschlossener 
         Mengen ist abgeschlossen.
         \item Der Durchschnitt beliebig vieler abgeschlossener 
         Mengen ist abgeschlossen.
@@ -170,14 +170,14 @@
 \begin{karte}{Äquivalenz von Normen}
     \( \norm{\cdot}_a, \norm{\cdot}_b \) sind äquivalent, wenn
     \[ \exists c_1, c_2: c_1\norm{x}_a \leq \norm{x}_b 
-    \leq c_2\norm{x}_a \; \forall x \]
+    \leq c_2\norm{x}_a \; \forall x. \]
 \end{karte}
 
 \begin{karte}{Stetigkeit}
     Seien \(X, Y \) metrische Räume, \(\abb{f}{X}{Y}\)
     heißt stetig in \(x_0 \in X\), falls 
-    \[ \forall \varepsilon > 0 \; \exists \delta > 0
-    d_y(f(x), f(x_0)) < \varepsilon \forall x \in X: 
+    \[ \forall \varepsilon > 0 \; \exists \delta > 0:
+    d_y(f(x), f(x_0)) < \varepsilon \; \forall x \in X: 
     d_x(x, x_0) < \delta \]
     oder äquivalent 
     \[ f(B_\delta(x_0)) \subset B_\varepsilon(f(x_0)) \]
@@ -189,7 +189,7 @@
     \( \abb{f}{X}{Y} \) heißt Lipschitzstetig 
     mit Konstante \( L \geq 0 \), falls 
     \[ d(f(x_1), f(x_2)) 
-    \leq L d(x_1, x_2) \forall x_1, x_2 \in X. \]
+    \leq L d(x_1, x_2) \;\forall x_1, x_2 \in X. \]
 \end{karte}
 
 \begin{karte}{Folgenkriterium für Stetigkeit}
@@ -202,13 +202,13 @@
 \begin{karte}{Charakterisierung von Stetigkeit}
     Seien \( X, Y \) metrische Räume. Dann gilt \( \abb{f}{X}{Y} \)
     ist stetig \( \Leftrightarrow \) Urbilder offener Mengen sind offen:
-    \( \forall V \subset Y \) offen ist \( f^{-1}(V) \) offen in \( X \).
+    \( \forall V \subset Y \) offen \(\Rightarrow f^{-1}(V) \) ist offen in \( X \).
 \end{karte}
 
 \begin{karte}{Folgenkompaktheit}
     Ein metrischer Raum \( X \) ist folgenkompakt oder kurz kompakt, 
-    falls jede Folge \((x_n)_n \subset X \) hat eine Teilfolge
-    \( (x_{n_k})_k \subset X \), die gegen ein \( x \in X \) konvergiert. \\
+    falls jede Folge \((x_n)_n \subset X \) eine Teilfolge
+    \( (x_{n_k})_k \subset X \) hat, die gegen ein \( x \in X \) konvergiert. \\
     Eine Menge \( K \subset \R^d \) (mit Euklidischen Abstand sogar jede
     Norm) ist kompakt \( \Leftrightarrow K \) ist abgeschlossen und
     beschränkt.
@@ -218,7 +218,7 @@
     \(M\) ist total beschränkt: 
     \[ \forall \varepsilon > 0 \; 
     \exists \text{ endlich viele } x_1,\dots,x_n \in X:
-    M \subset \bigcup_{j=1}^n B_\varepsilon(x_j) \]
+    M \subset \bigcup_{j=1}^n B_\varepsilon(x_j). \]
 \end{karte}
 
 \begin{karte}{Bilder kompakter Mengen}

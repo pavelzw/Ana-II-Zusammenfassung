@@ -6,7 +6,7 @@
 \begin{karte}{\( \mathcal{C}^1 \)-Kurve}
     Ist \( I \subset \R \) Intervall und
     \( \gamma \in \mathcal{C}^1(I, \R^d) \),
-    so heißt \(\gamma \in \mathcal{C}^1\)-Kurve.
+    so heißt \(\gamma \ \mathcal{C}^1\)-Kurve.
 \end{karte}
 
 \begin{karte}{Bogenlänge}
@@ -20,7 +20,7 @@
 \end{karte}
 
 \begin{karte}{Umparametrisierung}
-    Seien \(\abb{\gamma_j}{I_j}{\R^d}, j=1,2 \) zwei \(\mathcal{C}^1\)-Kurven
+    Seien \(\abb{\gamma_1, \gamma_2}{I_j}{\R^d}\) zwei \(\mathcal{C}^1\)-Kurven
     Dann heißt \(\gamma_2\) Umparametrisierung von \( \gamma_1 \),
     falls es eine Bijektion \(\varphi \in \mathcal{C}^1(I_2, I_1)\)
     mit \(\varphi' \neq 0 \) existiert mit 
@@ -29,9 +29,9 @@
 \end{karte}
 
 \begin{karte}{Bogenlänge von Umparametrisierungen}
-    Sind \(\gamma_j \in \mathcal{C}^1(I_j, \R^d), 
-    j \in \set{1,2}\ \gamma_2\) Umparametrisierung  
-    von \( \gamma_1 \), so ist 
+    Seien \(\gamma_j \in \mathcal{C}^1(I_j, \R^d), 
+    j \in \set{1,2}\). Wenn \(\gamma_2\) eine Umparametrisierung  
+    von \( \gamma_1 \) ist, so ist 
     \[ L(\gamma_1) = L(\gamma_2). \]
 \end{karte}
 
@@ -54,7 +54,7 @@
 \begin{karte}{Stückweise \( \mathcal{C}^1 \)-Kurve}
     \(\gamma \in \mathcal{C}([a,b], \R^d)\) heißt stückweise
     \(\mathcal{C}^1\)-Kurve, falls eine Zerlegung
-    \(a = t_1 < t_1 < \ldots < t_N = b\) existiert so, dass
+    \(a = t_1 < t_1 < \cdots < t_N = b\) existiert so, dass
     für \( I_k = [t_{k-1}, t_k]\)
     \[ \gamma \vert_{I_k} \in \mathcal{C}^1(I_k, \R^d) 
     \; \forall k = 1,\ldots,N. \]
@@ -77,8 +77,8 @@
     = \lambda_1 \int_\gamma F_1\; d\vec{x} + \lambda_2 \int_\gamma F_2
     \; d\vec{x}. \]
     b): Additivität bei Zerlegung:\\
-    Ist \(\gamma \leftarrow P\mathcal{C}^1([a,b], U), 
-    F \leftarrow \mathcal{C}^1(U, \R^d) \)
+    Ist \(\gamma \in P\mathcal{C}^1([a,b], U), 
+    F \in \mathcal{C}^1(U, \R^d) \)
     und \(a = t_0 < \ldots < t_N = b\) Zerlegung von \([a,b]\)
     \[\gamma_k := \gamma\vert_{[t_k1, t_k]}
     \Rightarrow \integralx{F}{\gamma}{}{\vec{x}}
@@ -90,7 +90,8 @@
     von \(\varphi'\)
     \[ \int_{\gamma \circ \varphi} F \; d\vec{x} 
     = \pm \int_\gamma F \; d\vec{x} \]
-    \(+: \varphi' > 0, -: \varphi' < 0\).
+    \(+: \varphi' > 0, \\
+    -: \varphi' < 0\).
 \end{karte}
 
 \begin{karte}{Abschätzung Kurvenintegral}
@@ -110,7 +111,8 @@
 
 \begin{karte}{Stammfunktion Eindeutigkeit}
     Ist \( U \subset \R^d \) wegezusammenhängend, so 
-    ist eine Stammfunktion \( \varphi \) von \( F \in \mathcal{C}(U, \R) \) 
+    ist eine Stammfunktion \( \varphi \) von \\
+    \( F \in \mathcal{C}(U, \R) \) 
     bis auf eine additive Konstante eindeutig bestimmt.
 \end{karte}
 
@@ -121,7 +123,7 @@
 
 \begin{karte}{Wegunabhängigkeit der Kurvenintegrale}
     Sei \( U \subset \R^d\) offen und wegweise zusammenhängend.
-    Für \( F \in \mathcal{C}(U, \R^d) \) sind äquivalent
+    Für \( F \in \mathcal{C}(U, \R^d) \) sind äquivalent:
     \begin{enumerate}
         \item \( F \) ist Gradientenfeld.
         \item Sei \(\gamma \in P\mathcal{C}^1([a,b], U)\) und 
@@ -137,8 +139,7 @@
     Für \( U \subset \R^d \) ist \( F \in \mathcal{C}(U, \R^d) \)
     ein Gradientenfeld.
     \[ \Rightarrow \partial_l F_j 
-    = \partial_j F_l \text{ in } U 
-    \;\forall 1 \leq l,j \leq d. \]
+    = \partial_j F_l \;\forall 1 \leq l,j \leq d. \]
 \end{karte}
 
 \begin{karte}{Homotopie}
@@ -180,9 +181,9 @@
 
 \begin{karte}{Affine Homotopie}
     Sei \(U \subset \R^d \) offen, \( F \in \mathcal{C}^1(U, \R^d), 
-    \partial_j F_l = \partial_l F_j \)\\
-    Kennen \( \gamma_0, \gamma_1 \in P\mathcal{C}^1([a,b], U) \) 
-    affine Homotopie 
+    \partial_j F_l = \partial_l F_j \).\\
+    Kennen \( \gamma_0, \gamma_1 \in P\mathcal{C}^1([a,b], U) \).
+    \(\gamma \) ist eine affine Homotopie mit 
     \[ \abb{\gamma}{[a,b] \times [0,1]}{\R^n}, \gamma(s,t) 
     := (1-t)\gamma_0(s) + t \gamma_1(s) \]
     Haben \(\gamma_0,\gamma_1\) dieselben 
